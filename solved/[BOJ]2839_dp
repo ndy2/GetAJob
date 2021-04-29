@@ -1,0 +1,41 @@
+#include <string>
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+set<int> dp[1667];
+
+void init_dp(){
+    dp[1] = {3,5};
+    for(int i = 2 ; i <= 1666 ; i++)
+    {
+        set<int> prev = dp[i-1];
+        set<int> cur;
+        for(auto e : prev)
+        {
+            if(e+3<=5000)
+                cur.insert(e+3);
+            if(e+5<=5000)
+                cur.insert(e+5);
+        }
+        dp[i] = cur;
+    }    
+}
+
+int solution(int n)
+{
+    for(int i = 1 ; i <=1666 ; i++)
+    {
+        if(dp[i].find(n) != dp[i].end())
+            return i;
+    }
+    return -1;
+}
+int main()
+{
+    int N;
+    cin>>N;
+    init_dp();
+    cout<<solution(N)<<endl;
+}
