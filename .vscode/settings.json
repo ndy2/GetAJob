@@ -6,6 +6,7 @@
         "cmath": "cpp",
         "map": "cpp",
         "set": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
