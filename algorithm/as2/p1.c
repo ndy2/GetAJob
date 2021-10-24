@@ -145,4 +145,5 @@ int main(){
     printHash(hash_11,info_11);
     printHash(hash_12,info_12);
 
+    return 0;
 }
